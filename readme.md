@@ -86,4 +86,5 @@ PubSub events acting as a bus between each of the separate components.
 | Answer Clicked  | QuestionView  | Model  | QuestionView:anserselected |  answer | Validate answer Publish next question |
 | Question Answered  | Model  | QuizView/QuestionView |  Model:Question-loaded  |  Element of QuestionAry,QuestionNum | QuizView render Q number/QuestionView render Question |
 | Last Question Clicked   |  QuestionView | Model   | QuestionView:FinalAnswer  |  Answer | Publish score  |
-| Score Published  | Model  | resultView  |  Model:FinalScore | Final score | Render Result View, show score , render result button  | |
+| Score Published  | Model  | resultView  |  Model:FinalScore | Final score | Render Result View, show score , render result button  |
+|Reset Button Clicked|Result View|Model|ResultView:Reset|0|generate Factoid>Publish, reset ResultView||
