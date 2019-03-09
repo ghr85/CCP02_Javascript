@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 console.log('dom loaded successfully');
 
 const model = new Model;
-model.bindevent();
+model.bindEvent();
 
 const landingView = new LandingView;
 landingView.bindEvent();
@@ -21,6 +21,6 @@ const questionView = new QuestionView;
 questionView.bindEvent();
 
 const resultView = new ResultView;
-resultView.bindevent();
+resultView.bindEvent();
 
 });
