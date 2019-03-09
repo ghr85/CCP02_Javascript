@@ -4,17 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "mocha client/src/models/specs",
-    "build": "webpack -w"
+    "build": "webpack -w",
+    "server:dev": "nodemon server/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.1.1"
+    "webpack-cli": "^3.1.1",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "mocha": "^6.0.2"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13"
   }
 }

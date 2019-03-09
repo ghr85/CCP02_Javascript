@@ -1,9 +1,7 @@
 use quiz;
 db.dropDatabase();
 
-db.activities.insertMany({
-"response_code": 0,
-"results": [
+db.questions.insertMany([
 {
   "qid": "1",
 "category": "Science & Nature",
@@ -259,4 +257,4 @@ db.activities.insertMany({
 ]
 }
 ]
-});
+);
