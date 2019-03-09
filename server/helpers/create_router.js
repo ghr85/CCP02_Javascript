@@ -23,10 +23,11 @@ const createRouter = function (collection) {
       .then((docs) => res.json(docs));
   });
 
+//note that I've modified this(line 30) to take account of our qid rather than mongo ID
   router.get('/:id', (req, res) => {
     const id = req.params.id;
     collection
-      .findOne({ _id: ObjectID(id) })
+      .findOne({ qid: id })
       .then((doc) => res.json(doc))
       .catch((err) => {
         console.error(err);
