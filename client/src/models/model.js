@@ -9,6 +9,7 @@ const Model = function(url){
   this.allQuestionsArray = null;
   this.questionNumber = 0;
   this.currentQuestion = null;
+  this.userScore = 0;
 };
 
 Model.prototype.bindEvent = function () {
@@ -19,11 +20,20 @@ Model.prototype.bindEvent = function () {
   });
   this.getQuestionData();
   PubSub.subscribe('LandingView:start-click', (evt) => {
-     this.questionNumber += evt.detail;
-     Publish("Model:question-loaded", {
-       "questionNumber": this.questionNumber,
-       "question": this.currentQuestion
-     } )
+     this.getQuestion();
+  });
+  PubSub.subscribe('QuestionView:answerselected', (evt) => {
+    if (this.currentQuestion.correct_answer === evt.detail ) {
+      this.userScore += 1;
+    };
+    if (this.questionNumber < 10) {
+      this.getQuestion();
+    }
+    else {
+      PubSub.publish('Model:FinalScore', this.userScore );
+      this.reset();
+    };
+
   });
 };
 
@@ -61,10 +71,19 @@ Model.prototype.shuffle= function (ary) {
 };
 
 Model.prototype.getQuestion = function () {
-  this.currentQuestion = this.allQuestionsArray[this.questionNumber]
+  this.questionNumber += 1;
+  this.currentQuestion = this.allQuestionsArray[this.questionNumber];
+  PubSub.publish("Model:question-loaded", {
+    "questionNumber": this.questionNumber,
+    "question": this.currentQuestion
+  });
 };
 
-
+Model.prototype.reset = function () {
+  this.questionNumber = 0;
+  this.userScore = 0;
+  this.getQuestionData();
+};
 
 
 module.exports = Model;
