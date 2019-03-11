@@ -6,11 +6,13 @@ const QuestionView = function(container){
 };
 
 QuestionView.prototype.bindEvent = function () {
+    console.log('QuestionView Integrated');
   PubSub.subscribe('Model:question-loaded', (evt) => {
     this.renderQuestion(evt.detail.question.question);
     this.renderAnswers(evt.detail.question.answers);
+      console.log(evt.detail);
   });
-  console.log(evt.detail);
+
 };
 
 QuestionView.prototype.createAnswerButton = function () {
@@ -37,8 +39,6 @@ QuestionView.prototype.render = function () {
 };
 
 
-
-};
 
 QuestionView.prototype.createQuestion = function (textContent) {
   const question = document.createElement('h3');

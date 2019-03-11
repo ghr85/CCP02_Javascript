@@ -5,18 +5,19 @@ this.container = container;
 };
 
 LandingView.prototype.bindEvent = function () {
+  console.log('LandingView Integrated');
   PubSub.publish('LandingView:Page-Loaded', 0)
 
-  PubSub.subscribe('Model:Factoid-loaded', (evt) {
+  PubSub.subscribe('Model:Factoid-loaded', (evt) => {
     this.render(evt.detail);
   });
+};
 
 
 
 
 
-
-LandingView.prototype.render = function (factoid) {
+LandingView.prototype.render = function (factoidString) {
   this.container.innerHTML = '';
 
   const landingContainer = document.createElement('div');
