@@ -6,7 +6,7 @@ const QuestionView = function(container){
 };
 
 QuestionView.prototype.bindEvent = function () {
-  console.log('question view integrated');
+    console.log('QuestionView Integrated');
   PubSub.subscribe('Model:question-loaded', (evt) => {
     this.renderQuestion(evt.detail.question.question);
     this.renderAnswers(evt.detail.question.answers);
@@ -62,7 +62,11 @@ QuestionView.prototype.createAnswerButton = function () {
 // };
 
 
-
+QuestionView.prototype.createQuestion = function (textContent) {
+  const question = document.createElement('h3');
+  question.textContent = textContent;
+  return question;
+};
 
 
 // QuestionView.prototype.createQuestion = function (textContent) {
