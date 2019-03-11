@@ -16,7 +16,7 @@ LandingView.prototype.bindEvent = function () {
 
 
 
-LandingView.prototype.render = function (factoid) {
+LandingView.prototype.render = function (factoidString) {
   this.container.innerHTML = '';
 
   const landingContainer = document.createElement('div');
@@ -45,6 +45,7 @@ LandingView.prototype.createStartButton = function () {
 
   button.addEventListener('click', (evt) => {
     PubSub.publish('LandingView: start-quiz', evt.target.value);
+    console.log(evt.target.value);
   });
 
   return button;
