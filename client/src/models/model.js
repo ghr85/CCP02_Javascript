@@ -14,8 +14,10 @@ Model.prototype.bindEvent = function () {
   PubSub.subscribe('LandingView:Page-Loaded', (evt) => {
     PubSub.publish('Model:Factoid-loaded', this.get_landing_quote);
   });
-  this.getQuestionData();
+  this.getQuestionData()
+
 };
+
 
 
 Model.prototype.get_landing_quote = function () {
@@ -27,9 +29,20 @@ Model.prototype.get_landing_quote = function () {
 Model.prototype.getQuestionData = function () {
   this.request.get()
   .then((data) => {
-    this.allQuestionsArray = data;
-
+    const shuffledQuestions = this.shuffle(data);
+    this.allQuestionsArray = shuffledQuestions;
   });
+};
+
+Model.prototype.shuffle= function (ary) {
+  let shuffleArray = ary;
+  let i = shuffleArray.length, j, temp;
+  while(--i > 0 ) {
+    j = Math.floor(Math.random() * (i+1));
+    temp = shuffleArray[j];
+    shuffleArray[j] = shuffleArray[i];
+    shuffleArray[i] = temp;
+  }
 };
 
 
