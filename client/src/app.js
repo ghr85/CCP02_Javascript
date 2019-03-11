@@ -8,7 +8,7 @@ const ResultView = require('./views/result_view.js');
 document.addEventListener('DOMContentLoaded', () => {
 console.log('dom loaded successfully');
 
-const model = new Model;
+const model = new Model('http://localhost:3000/api/questions');
 model.bindEvent();
 
 const landingView = new LandingView;
