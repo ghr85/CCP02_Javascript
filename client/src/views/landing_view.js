@@ -5,12 +5,12 @@ this.container = container;
 };
 
 LandingView.prototype.bindEvent = function () {
-  PubSub.publish('LandingView:Page-Loaded', 0)
+  console.log('landing view Integrated');
 
-  PubSub.subscribe('Model:Factoid-loaded', (evt) {
+  PubSub.subscribe('Model:Factoid-loaded', (evt) => {
     this.render(evt.detail);
   });
-
+};
 
 
 
@@ -41,10 +41,11 @@ LandingView.prototype.createHeading = function (textContent) {
 LandingView.prototype.createStartButton = function () {
   const button = document.createElement('button');
   button.classList.add('start-btn');
+  button.textContent = 'Start the Quiz'
   button.value = 1;
 
   button.addEventListener('click', (evt) => {
-    PubSub.publish('LandingView: start-quiz', evt.target.value);
+    PubSub.publish('LandingView:start-click', evt.target.value);
     console.log(evt.target.value);
   });
 

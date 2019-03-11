@@ -14,10 +14,9 @@ const Model = function(url){
 
 Model.prototype.bindEvent = function () {
   console.log('Model Integrated');
-  PubSub.subscribe('LandingView:Page-Loaded', (evt) => {
-    PubSub.publish('Model:Factoid-loaded', this.get_landing_quote);
 
-  });
+    PubSub.publish('Model:Factoid-loaded', this.get_landing_quote());
+
   this.getQuestionData();
   PubSub.subscribe('LandingView:start-click', (evt) => {
      this.getQuestion();
@@ -41,6 +40,7 @@ Model.prototype.get_landing_quote = function () {
  const factoids = new Factoids();
   const factoidString = factoids.factoidsArray[Math.floor(Math.random() * factoids.factoidsArray.length)];
   return factoidString;
+
 };
 
 Model.prototype.getQuestionData = function () {

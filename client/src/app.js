@@ -8,19 +8,18 @@ const ResultView = require('./views/result_view.js');
 document.addEventListener('DOMContentLoaded', () => {
 console.log('dom loaded successfully');
 
+const viewContainer = document.querySelector('#content_parent');
+const landingView = new LandingView(viewContainer);
 const model = new Model('http://localhost:3000/api/questions');
+const quizView = new QuizView(viewContainer);
+const questionView = new QuestionView(viewContainer);
+const resultView = new ResultView;
+
+landingView.bindEvent();
 model.bindEvent();
 
-const landingView = new LandingView;
-landingView.bindEvent();
-
-const quizView = new QuizView;
-quizView.bindEvent();
-
-const questionView = new QuestionView;
 questionView.bindEvent();
-
-const resultView = new ResultView;
+quizView.bindEvent();
 resultView.bindEvent();
 
 });
