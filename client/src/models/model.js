@@ -7,18 +7,25 @@ const Model = function(url){
   this.url = url;
   this.request = new RequestHelper(this.url);
   this.allQuestionsArray = null;
+  this.questionNumber = 0;
+  this.currentQuestion = null;
 };
 
 Model.prototype.bindEvent = function () {
   console.log('Model Integrated');
   PubSub.subscribe('LandingView:Page-Loaded', (evt) => {
     PubSub.publish('Model:Factoid-loaded', this.get_landing_quote);
+
   });
-  this.getQuestionData()
-
+  this.getQuestionData();
+  PubSub.subscribe('LandingView:start-click', (evt) => {
+     this.questionNumber += evt.detail;
+     Publish("Model:question-loaded", {
+       "questionNumber": this.questionNumber,
+       "question": this.currentQuestion
+     } )
+  });
 };
-
-
 
 Model.prototype.get_landing_quote = function () {
  const factoids = new Factoids();
@@ -30,7 +37,14 @@ Model.prototype.getQuestionData = function () {
   this.request.get()
   .then((data) => {
     const shuffledQuestions = this.shuffle(data);
-    this.allQuestionsArray = shuffledQuestions;
+    this.allQuestionsArray = shuffledQuestions.map((object)=>{
+      return {
+        "question":object.question,
+        "answer_count": object.incorrect_answers.push(object.correct_answer),
+        "correct": object.correct_answer,
+        "answers": this.shuffle(object.incorrect_answers)
+      }
+    });
   });
 };
 
@@ -43,17 +57,14 @@ Model.prototype.shuffle= function (ary) {
     shuffleArray[j] = shuffleArray[i];
     shuffleArray[i] = temp;
   }
+  return shuffleArray;
+};
+
+Model.prototype.getQuestion = function () {
+  this.currentQuestion = this.allQuestionsArray[this.questionNumber]
 };
 
 
-// var quiz = this.quizes[Math.floor(Math.random() * this.quizes.length)];
-// console.log(quiz.question);
-// const questionView = new QuestionView(this.container, quiz);
-//    const selectedAnswer = questionView.render();
-//
-//    PubSub.publish('one quiz submitted', selectedAnswer)
-//
-// };
 
 
 module.exports = Model;
