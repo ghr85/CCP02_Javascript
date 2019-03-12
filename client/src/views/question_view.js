@@ -39,25 +39,6 @@ answer_ary.forEach((answer) => {
 })
 };
 
-QuestionView.prototype.createAnswerButton = function () {
-  const answerButton = document.createElement('button');
-  answerButton.classList.add('answer');
-
-  answerButton.addEventListener('click', (evt) => {
-    PubSub.publish('QuestionView:answerselected', this.container);
-  })
-  return answerButton;
-};
-
-
-
-QuestionView.prototype.createQuestion = function (textContent) {
-  const question = document.createElement('h3');
-  question.textContent = textContent;
-  return question;
-};
-
-
 
 
 

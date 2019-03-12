@@ -13,11 +13,8 @@ QuizView.prototype.bindEvent = function () {
 };
 
 QuizView.prototype.render = function () {
-  // this.container.innerHTML = '';
-
   const quizCounterContainer = document.createElement('div');
   quizCounterContainer.id = 'quiz-counter';
-
   this.container.appendChild(quizCounterContainer);
 };
 
