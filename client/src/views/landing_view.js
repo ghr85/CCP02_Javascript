@@ -5,7 +5,7 @@ const LandingView = function(container){
 };
 
 LandingView.prototype.bindEvent = function () {
-
+console.log('LandingView Integrated');
   PubSub.subscribe('Model:Factoid-loaded', (evt) => {
     this.render(evt.detail);
   });
@@ -45,7 +45,6 @@ LandingView.prototype.createStartButton = function () {
 
   button.addEventListener('click', (evt) => {
     PubSub.publish('LandingView:start-click', evt.target.value);
-    console.log(evt.target.value);
   });
 
   return button;

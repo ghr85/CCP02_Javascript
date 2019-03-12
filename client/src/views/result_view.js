@@ -21,8 +21,28 @@ ResultView.prototype.bindEvent = function () {
     resultContainer.appendChild(heading);
 
     const result = document.createElement('p');
-    heading.textContent = `You got ${evt.detail} out of 10!`
-    resultContainer.appendChild(heading);
+    result.textContent = `You got ${evt.detail.score} out of 10!`
+    resultContainer.appendChild(result);
+
+    if (evt.detail.score !== 10){
+      const wrongUns = document.createElement('p');
+      wrongUns.textContent = `Here are the questions you got wrong`
+      resultContainer.appendChild(wrongUns);
+      evt.detail.incorrectAnswers.forEach((element) => {
+        const incorrectQuestion = document.createElement('p')
+        incorrectQuestion.textContent = `${element.question}`
+        incorrectQuestion.classList.add('incorrectQ')
+        const incorrectAnswer = document.createElement('p')
+        incorrectAnswer.textContent = `You answered ${element.userAnswer}`
+        incorrectAnswer.classList.add('incorrectA')
+        const correctAnswer = document.createElement('p')
+        correctAnswer.textContent = `The correct answer is ${element.answer}`
+        correctAnswer.classList.add('correctA')
+        resultContainer.appendChild(incorrectQuestion);
+        resultContainer.appendChild(incorrectAnswer);
+        resultContainer.appendChild(correctAnswer);
+      })
+    };
 
     const restartButton = this.createRestartButton();
     resultContainer.appendChild(restartButton);
@@ -63,13 +83,11 @@ ResultView.prototype.bindEvent = function () {
             y: 10 - evt.detail.score
         }
       ]
-        }]
-    })
-    // resultContainer.appendChild(this.chartView);
+    }]
+  })
+  this.container.appendChild(resultContainer);
 
-    this.container.appendChild(resultContainer);
-
-  } );
+} );
 
 };
 
