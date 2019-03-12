@@ -7,7 +7,6 @@ const QuizView = function (container) {
 QuizView.prototype.bindEvent = function () {
   PubSub.subscribe('Model:question-loaded', (evt) => {
     this.render(evt.detail);
-    console.log(evt.detail);
   });
   console.log('QuizView Integrated');
 };
