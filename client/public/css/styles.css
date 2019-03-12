@@ -9,6 +9,7 @@
 }
 
 .Answer:hover{
+  cursor:pointer;
   color: black;
   background-color: rgb(178, 184, 73);
 }

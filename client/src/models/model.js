@@ -22,7 +22,8 @@ Model.prototype.bindEvent = function () {
      this.getQuestion();
   });
   PubSub.subscribe('QuestionView:answerselected', (evt) => {
-    if (this.currentQuestion.correct_answer === evt.detail ) {
+    if (this.currentQuestion.correct == evt.detail ) {
+console.log(evt.detail);
       this.userScore += 1;
     };
     if (this.questionNumber < 10) {
@@ -30,10 +31,13 @@ Model.prototype.bindEvent = function () {
     }
     else {
       PubSub.publish('Model:FinalScore', this.userScore );
-      this.reset();
+
     };
 
   });
+  PubSub.subscribe('ResultView:restart-click', (evt) => {
+    this.reset();
+  })
 };
 
 Model.prototype.get_landing_quote = function () {
@@ -83,7 +87,9 @@ Model.prototype.reset = function () {
   this.questionNumber = 0;
   this.userScore = 0;
   this.getQuestionData();
+  PubSub.publish('Model:Factoid-loaded', this.get_landing_quote())
 };
+
 
 
 module.exports = Model;

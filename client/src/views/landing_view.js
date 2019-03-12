@@ -5,6 +5,7 @@ this.container = container;
 };
 
 LandingView.prototype.bindEvent = function () {
+
   PubSub.subscribe('Model:Factoid-loaded', (evt) => {
     this.render(evt.detail);
   });

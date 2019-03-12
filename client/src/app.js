@@ -13,7 +13,7 @@ const landingView = new LandingView(viewContainer);
 const model = new Model('http://localhost:3000/api/questions');
 const quizView = new QuizView(viewContainer);
 const questionView = new QuestionView(viewContainer);
-const resultView = new ResultView;
+const resultView = new ResultView(viewContainer);
 
 landingView.bindEvent();
 model.bindEvent();

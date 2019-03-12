@@ -29,12 +29,12 @@ const answerList = document.createElement('ul')
 answer_ary.forEach((answer) => {
  let answerItem = document.createElement('li')
  answerItem.textContent = answer;
- answerItem.name = answer;
+ answerItem.id = answer;
  answerItem.classList.add('Answer');
  this.container.appendChild(answerItem)
- console.log(answerItem);
+ console.log(answerItem.id);
  answerItem.addEventListener('click', (evt) => {
- PubSub.publish('QuestionView:answerselected',this.name)
+ PubSub.publish('QuestionView:answerselected',answerItem.id)
 })
 })
 };
