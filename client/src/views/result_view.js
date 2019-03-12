@@ -55,12 +55,12 @@ ResultView.prototype.bindEvent = function () {
             data: [{
             name: "correct",
             color: "green",
-            y: evt.detail
+            y: evt.detail.score
 
         }, {
             name: 'Incorrect',
             color: "red",
-            y: 10 - evt.detail
+            y: 10 - evt.detail.score
         }
       ]
         }]
