@@ -1,0 +1,8 @@
+.answer{
+  color: white;
+  background-color: rgb(99, 185, 74);
+}
+.answer::hover{
+  color: black;
+  background-color: rgb(178, 184, 73);
+}
