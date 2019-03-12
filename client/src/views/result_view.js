@@ -28,48 +28,46 @@ ResultView.prototype.bindEvent = function () {
     resultContainer.appendChild(restartButton);
 
     Highcharts.chart(this.container, {
-        chart: {
-            renderTo: 'container',
-            type: 'pie'
-        },
-        title: {
-            text: 'Your Score'
-        },
-        plotOptions: {
-       pie: {
-           allowPointSelect: true,
-           cursor: 'pointer',
-           dataLabels: {
-               enabled: true,
-               format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-               style: {
-                   color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'brown',
-                   backgroundColor: (Highcharts.theme && Highcharts.theme.contrastBackgroundColor) || 'red'
-               }
-           }
-       }
-        },
-        series: [{
+      chart: {
+        renderTo: 'container',
+        type: 'pie'
+      },
+      title: {
+        text: 'Your Score'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+            style: {
+              color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'brown',
+              backgroundColor: (Highcharts.theme && Highcharts.theme.contrastBackgroundColor) || 'red'
+            }
+          }
+        }
+      },
+      series: [{
 
-            name: 'result',
-            data: [{
-            name: "correct",
-            color: "green",
-            y: evt.detail
+        name: 'result',
+        data: [{
+          name: "correct",
+          color: "green",
+          y: evt.detail
 
         }, {
-            name: 'Incorrect',
-            color: "red",
-            y: 10 - evt.detail
+          name: 'Incorrect',
+          color: "red",
+          y: 10 - evt.detail
         }
       ]
-        }]
-    })
-    // resultContainer.appendChild(this.chartView);
+    }]
+  })
+  this.container.appendChild(resultContainer);
 
-    this.container.appendChild(resultContainer);
-
-  } );
+} );
 
 };
 
