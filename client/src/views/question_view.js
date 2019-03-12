@@ -16,6 +16,7 @@ QuestionView.prototype.bindEvent = function () {
 };
 
 QuestionView.prototype.renderQuestion = function (question_str) {
+this.container.innerHTML = '';
  const question = document.createElement('h3')
  question.textContent = question_str
  question.classList.add('Question')
