@@ -1,8 +1,18 @@
-.answer{
-  color: white;
-  background-color: rgb(99, 185, 74);
+*{
+  background-color: whitesmoke;
 }
-.answer::hover{
+
+.Answer{
+  color: black;
+  background-color: rgb(99, 185, 74);
+  margin: 2px;
+}
+
+.Answer:hover{
   color: black;
   background-color: rgb(178, 184, 73);
+}
+
+li{
+  list-style: none
 }
