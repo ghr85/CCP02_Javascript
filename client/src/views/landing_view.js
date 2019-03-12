@@ -5,12 +5,7 @@ this.container = container;
 };
 
 LandingView.prototype.bindEvent = function () {
-<<<<<<< HEAD
-  console.log('landing view Integrated');
-=======
-  console.log('LandingView Integrated');
-  PubSub.publish('LandingView:Page-Loaded', 0)
->>>>>>> 1e88719593a0b23ac9f48a5418ae47ce048a0807
+
 
   PubSub.subscribe('Model:Factoid-loaded', (evt) => {
     this.render(evt.detail);
