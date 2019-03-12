@@ -49,18 +49,6 @@ QuestionView.prototype.createAnswerButton = function () {
   return answerButton;
 };
 
-// QuestionView.prototype.render = function () {
-//   this.container.innerHTML = '';
-//
-//   const questionContainer = document.createElement('div');
-//   questionContainer.id = 'question';
-//
-//   const currentQuestion = this.createQuestion(question);
-//   questionContainer.appendChild(currentQuestion);
-//
-//   // const answerList = this.createLi(answers);
-//   // questionContainer.appendChild(answerList);
-// };
 
 
 QuestionView.prototype.createQuestion = function (textContent) {
@@ -70,37 +58,7 @@ QuestionView.prototype.createQuestion = function (textContent) {
 };
 
 
-// QuestionView.prototype.createQuestion = function (textContent) {
-//   const question = document.createElement('h3');
-//   question.textContent = textContent;
-//   return question;
-// };
-//
-// QuestionView.prototype.renderAnswers = function (items) {
-//   this.emptyList();
-//   items.forEach((item) => this.createAnswerList.createAnswerButton(item));
-// };
-//
-// QuestionView.prototype.createAnswerList = function () {
-//   const answers = document.createElement('ul');
-//   answers.textContent = textContent;
-//   return answers;
-// };
 
-//
-// QuestionView.prototype.emptyList= function (items) {
-//   this.container.innerHTML = '';
-// };
-//
-// QuestionView.prototype.createLi = function () {
-//   const li = document.createElement('li');
-//   li.classList.add('answer-list-item');
-// };
-//
-// QuestionView.prototype.renderItem = function (item) {
-//   const listItem =
-//
-// };
 
 
 
