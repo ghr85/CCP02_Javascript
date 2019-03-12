@@ -1,7 +1,7 @@
 const PubSub = require('../helpers/pub_sub.js');
 
 const LandingView = function(container){
-this.container = container;
+  this.container = container;
 };
 
 LandingView.prototype.bindEvent = function () {

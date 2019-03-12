@@ -15,15 +15,15 @@ const Model = function(url){
 Model.prototype.bindEvent = function () {
   console.log('Model Integrated');
 
-    PubSub.publish('Model:Factoid-loaded', this.get_landing_quote());
+  PubSub.publish('Model:Factoid-loaded', this.get_landing_quote());
 
   this.getQuestionData();
   PubSub.subscribe('LandingView:start-click', (evt) => {
-     this.getQuestion();
+    this.getQuestion();
   });
   PubSub.subscribe('QuestionView:answerselected', (evt) => {
     if (this.currentQuestion.correct == evt.detail ) {
-console.log(evt.detail);
+      console.log(evt.detail);
       this.userScore += 1;
     };
     if (this.questionNumber < 10) {
@@ -41,7 +41,7 @@ console.log(evt.detail);
 };
 
 Model.prototype.get_landing_quote = function () {
- const factoids = new Factoids();
+  const factoids = new Factoids();
   const factoidString = factoids.factoidsArray[Math.floor(Math.random() * factoids.factoidsArray.length)];
   return factoidString;
 
@@ -61,17 +61,15 @@ Model.prototype.getQuestionData = function () {
     });
   });
 };
-
-Model.prototype.shuffle= function (ary) {
-  let shuffleArray = ary;
-  let i = shuffleArray.length, j, temp;
-  while(--i > 0 ) {
-    j = Math.floor(Math.random() * (i+1));
-    temp = shuffleArray[j];
-    shuffleArray[j] = shuffleArray[i];
-    shuffleArray[i] = temp;
+Model.prototype.shuffle = function (array) {
+  let currentIndex = array.length
+  while(--currentIndex > 0){
+    let randomIndex = Math.floor(Math.random() * (currentIndex+1))
+    let temporaryHold = array[randomIndex];
+    array[randomIndex] = array[currentIndex]
+    array[currentIndex] = temporaryHold
   }
-  return shuffleArray;
+  return array;
 };
 
 Model.prototype.getQuestion = function () {
