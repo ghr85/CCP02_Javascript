@@ -4,88 +4,88 @@ db.dropDatabase();
 db.questions.insertMany([
 {
   "qid": "1",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "What is the colour of unoxidized blood?",
-"correct_answer": "Red",
+"question": "Recycling One Aluminum Can Will Power a TV For How Long?",
+"correct_answer": "3 Hours",
 "incorrect_answers": [
-"Blue",
-"Purple",
-"Green"
+"30 Minutes",
+"1 Hour",
+"6 Hours"
 ]
 },
 {
     "qid": "2",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "The humerus, paired radius, and ulna come together to form what joint?",
-"correct_answer": "Elbow",
+"question": "How Many Trees are Cut Down Each Day to produce Toilet Paper?",
+"correct_answer": "25,000",
 "incorrect_answers": [
-"Knee",
-"Sholder",
-"Ankle"
+"1000",
+"50,000",
+"10,000"
 ]
 },
 {
     "qid": "3",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "What was the first living creature in space?",
-"correct_answer": "Fruit Flies ",
+"question": "American Companies Alone Use Enough Paper to Encircle the Earth How Many Times?",
+"correct_answer": "3",
 "incorrect_answers": [
-"Monkey",
-"Dog",
-"Mouse"
+"1",
+"2",
+"5"
 ]
 },
 {
     "qid": "4",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "What mineral has the lowest number on the Mohs scale?",
-"correct_answer": "Talc",
+"question": "How Many Acres Per Minute are Cut Down in Rainforests?",
+"correct_answer": "100",
 "incorrect_answers": [
-"Quartz",
-"Diamond",
-"Gypsum"
+"200",
+"1000",
+"50"
 ]
 },
 {
     "qid": "5",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "The Axiom of Preventive Medicine states that people with ___ risk for a disease should be screened and we should treat ___ of those people.",
-"correct_answer": "low, all",
+"question": "A Glass Bottle Made in Our Time Will Take How Many Years to Decompose?",
+"correct_answer": "4,000",
 "incorrect_answers": [
-"low, some",
-"high, all",
-"high, some"
+"1,000",
+"10,000",
+"500"
 ]
 },
 {
     "qid": "6",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "The &quot;Tibia&quot; is found in which part of the body?",
-"correct_answer": "Leg",
+"question": "Packaging Materials Make Up Which Percentage of Landfills?",
+"correct_answer": "35%",
 "incorrect_answers": [
-"Arm",
-"Hand",
-"Head"
+"60%",
+"70%",
+"85%"
 ]
 },
 {
     "qid": "7",
-"category": "Science & Nature",
 "type": "boolean",
+"image_url": "",
 "difficulty": "medium",
-"question": "Type 1 diabetes is a result of the liver working improperly.",
+"question": "The Golden Toad Was the First Species To Go Extinct",
 "correct_answer": "False",
 "incorrect_answers": [
 "True"
@@ -93,60 +93,58 @@ db.questions.insertMany([
 },
 {
     "qid": "8",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "Where did the dog breed &quot;Chihuahua&quot; originate?",
-"correct_answer": "Mexico",
+"question": "Climate Change Costs the U.S How Much Per Year?",
+"correct_answer": "$100 Billon",
 "incorrect_answers": [
-"France",
-"Spain",
-"Russia"
+"$1 Billon",
+"$50 Billon",
+"$150 Billon"
 ]
 },
 {
     "qid": "9",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "What polymer is used to make CDs, safety goggles and riot shields?",
-"correct_answer": "Polycarbonate",
+"question": "Efforts to maintain and purify our drinking water can take a huge toll on carbon emissions. ",
+"correct_answer": "True",
 "incorrect_answers": [
-"Rubber",
-"Nylon",
-"Bakelite"
+"False"
 ]
 },
 {
     "qid": "10",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "What is the atomic number of the element Strontium?",
-"correct_answer": "38",
+"question": "In the 10,000 years before the Industrial Revolution in 1751, carbon dioxide levels rose less than 1 percent. Since then, they've risen by:",
+"correct_answer": "43%",
 "incorrect_answers": [
-"73",
-"47",
-"11"
+"73%",
+"47%",
+"11%"
 ]
 },
 {
     "qid": "11",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "After which Danish city is the 72th element on the periodic table named?",
-"correct_answer": "Copenhagen",
+"question": "We produce more than 30 billion tons of carbon dioxide per year. Where does the majority of it end up?",
+"correct_answer": "It Lingers in the Atmosphere",
 "incorrect_answers": [
-"Odense",
-"Herning",
-"Skagen"
+"It is Inhaled by Trees for Photosynthesis",
+"It Enters Our Oceans",
+"It is Inhaled by Humans"
 ]
 },
 {
     "qid": "12",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
 "question": "Myopia is the scientific term for which condition?",
 "correct_answer": "Shortsightedness",
@@ -158,102 +156,106 @@ db.questions.insertMany([
 },
 {
     "qid": "13",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "In Chemistry, how many isomers does Butanol (C4H9OH) have?",
-"correct_answer": "4",
+"question": "Climate scientists predict that increasing carbon dioxide levels in the atmosphere will result in:",
+"correct_answer": "All of the Above",
 "incorrect_answers": [
-"3",
-"5",
-"6"
+"More Acidic Oceans",
+"Decreased Soil Moisture",
+"Stronger Hurricanes"
 ]
 },
 {
     "qid": "14",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "Which of these elements on the Periodic Table is a Noble Gas?",
-"correct_answer": "Neon",
+"question": "The average American adds how much carbon dioxide to the atmosphere per year?",
+"correct_answer": "20 Tons",
 "incorrect_answers": [
-"Potassium",
-"Iodine",
-"Colbalt"
+"Half a Ton",
+"1 Ton",
+"10 Tons"
 ]
 },
 {
     "qid": "15",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "Who made the discovery of X-rays?",
-"correct_answer": "Wilhelm Conrad R&ouml;ntgen",
+"question": "Which planets have carbon dioxide in their atmosphere?",
+"correct_answer": "Earth, Venus and Mars",
 "incorrect_answers": [
-"Thomas Alva Edison",
-"James Watt",
-"Albert Einstein"
+"Earth, Venus, Mars and Jupiter",
+"Earth and Venus",
+"Earth"
 ]
 },
 {
     "qid": "16",
-"category": "Science & Nature",
 "type": "boolean",
+"image_url": "",
 "difficulty": "medium",
-"question": "In the periodic table, Potassium&#039;s symbol is the letter K.",
-"correct_answer": "True",
+"question": "Which of the following would have the biggest impact on reducing carbon emissions?",
+"correct_answer": "Shutting Down all Fossil Fuel Power Plants",
 "incorrect_answers": [
-"False"
+"Growing Our Own Vegetables",
+"Taking all Fossil Fuel-Burning Vehicles off the Road",
+"Stopping Deforestation"
 ]
 },
 {
     "qid": "17",
-"category": "Science & Nature",
 "type": "boolean",
+"image_url": "",
 "difficulty": "medium",
-"question": "Sugar contains fat.",
-"correct_answer": "False",
+"question": "If humans stopped emitting carbon dioxide tomorrow, what would happen to global temperatures?",
+"correct_answer": "They Would Continue to Rise",
 "incorrect_answers": [
-"True"
+"They Would Immediately Begin to Drop",
+"They Would Stop Rising, Flatten out and Then Drop",
+"Nothing"
 ]
 },
 {
     "qid": "18",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "What is the largest living organism currently known to man?",
-"correct_answer": "Honey Fungus",
+"question": "Norwegian oil company Statoil’s Sleipner project in the North Sea is considered the world’s first demonstration of carbon capture and underground storage. When was it started?",
+"correct_answer": "1996",
 "incorrect_answers": [
-"Blue Whale",
-"Redwood Tree",
-"The Coral Reef"
+"1976",
+"1986",
+"2006"
 ]
 },
 {
     "qid": "19",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "Approximately how long is a year on Uranus?",
-"correct_answer": "84 Earth years",
+"question": "The physical and chemical absorption of CO2 can be achieved with all of the following EXCEPT:",
+"correct_answer": "Water",
 "incorrect_answers": [
-"47 Earth years",
-"62 Earth years",
-"109 Earth years"
+"Solvents",
+"Sorbents",
+"Cryogenic Techniques"
 ]
 },
 {
     "qid": "20",
-"category": "Science & Nature",
 "type": "multiple",
+"image_url": "",
 "difficulty": "medium",
-"question": "Which of the following men does not have a chemical element named after him?",
-"correct_answer": "Sir Isaac Newton",
+"question": "About how much of the flue gas leaving a coal-fired power plant is CO2?",
+"correct_answer": "12%",
 "incorrect_answers": [
-"Albert Einstein",
-"Niels Bohr",
-"Enrico Fermi"
+"2%",
+"20%",
+"50%"
 ]
 }
 ]
