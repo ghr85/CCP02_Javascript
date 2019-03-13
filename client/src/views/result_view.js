@@ -82,6 +82,9 @@ ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
     wrongUns.textContent = `Here are the questions you got wrong`
     this.resultContainer.appendChild(wrongUns);
     incorrectAnswerArray.forEach((element) => {
+      const incorrectContainer = document.createElement('div')
+      incorrectContainer.classList.add('incorrectContainer')
+
       const incorrectQuestion = document.createElement('p')
       incorrectQuestion.textContent = `${element.question}`
       incorrectQuestion.classList.add('incorrectQ')
@@ -94,9 +97,11 @@ ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
       correctAnswer.textContent = `The correct answer is ${element.answer}`
       correctAnswer.classList.add('correctA')
 
-      this.resultContainer.appendChild(incorrectQuestion);
-      this.resultContainer.appendChild(incorrectAnswer);
-      this.resultContainer.appendChild(correctAnswer);
+      incorrectContainer.appendChild(incorrectQuestion);
+      incorrectContainer.appendChild(incorrectAnswer);
+      incorrectContainer.appendChild(correctAnswer);
+      this.resultContainer.appendChild(incorrectContainer);
+
     })
   };
 };
@@ -117,8 +122,7 @@ ResultView.prototype.renderChart = function (score) {
           enabled: true,
           format: '<b>{point.name}</b>: {point.percentage:.1f} %',
           style: {
-            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'brown',
-            backgroundColor: (Highcharts.theme && Highcharts.theme.contrastBackgroundColor) || 'red'
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
           }
         }
       }
