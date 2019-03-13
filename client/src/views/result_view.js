@@ -3,6 +3,7 @@ const Highcharts = require('highcharts')
 const ResultView = function(container){
   this.container = container;
   this.resultContainer = null;
+  this.incorrectAnsContainer = null;
 };
 
 ResultView.prototype.bindEvent = function () {
@@ -24,6 +25,10 @@ ResultView.prototype.bindEvent = function () {
     const scoreComment = this.checkScore(evt.detail.score);
     this.resultContainer.appendChild(scoreComment);
 
+    this.incorrectAnsContainer = document.createElement('div')
+    this.incorrectAnsContainer.id = 'incorrectAnswers'
+    this.resultContainer.appendChild(this.incorrectAnsContainer);
+
     this.renderIncorrect(evt.detail.score,evt.detail.incorrectAnswers)
 
 
@@ -41,13 +46,13 @@ ResultView.prototype.checkScore = function (score) {
   scoreText.classList.add('scoreComment')
   if (score > 0 && score <= 3)
   {
-    scoreText.textContent = `Get Yourself Back to School!`
+    scoreText.textContent = `Get Yourself Back to School! Here are the ones you got wrong:`
   } else if (score > 3 && score <= 6) {
-    scoreText.textContent = 'You Need to Brush Up!'
+    scoreText.textContent = 'You Need to Brush Up! Here is where you went wrong:'
   }
   else if (score > 6 && score <= 9)
   {
-    scoreText.textContent = 'A for Effort!'
+    scoreText.textContent = 'A for Effort! Only a few mistakes:'
   }
   else if (score == 10)
   {
@@ -55,7 +60,7 @@ ResultView.prototype.checkScore = function (score) {
   }
   else if (score === 0)
   {
-    scoreText.textContent = `You're a Planet Killer!`
+    scoreText.textContent = `You're a Planet Killer! Here are the correct answers:`
   }
 
 
@@ -67,7 +72,7 @@ ResultView.prototype.checkScore = function (score) {
 ResultView.prototype.createRestartButton = function () {
   const button = document.createElement('button');
   button.id ='home-btn';
-  button.textContent = 'Return Home'
+  button.textContent = 'Return to the Homepage'
   button.value = 1;
 
   button.addEventListener('click', (evt) => {
@@ -77,11 +82,13 @@ ResultView.prototype.createRestartButton = function () {
   return button;
 };
 ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
+
   if (score!== 10){
-    const wrongUns = document.createElement('p');
-    wrongUns.textContent = `Here are the questions you got wrong`
-    this.resultContainer.appendChild(wrongUns);
+    this.incorrectAnsContainer.innerHTML ='';
     incorrectAnswerArray.forEach((element) => {
+      const incorrectContainer = document.createElement('div')
+      incorrectContainer.classList.add('incorrectContainer')
+
       const incorrectQuestion = document.createElement('p')
       incorrectQuestion.textContent = `${element.question}`
       incorrectQuestion.classList.add('incorrectQ')
@@ -94,9 +101,11 @@ ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
       correctAnswer.textContent = `The correct answer is ${element.answer}`
       correctAnswer.classList.add('correctA')
 
-      this.resultContainer.appendChild(incorrectQuestion);
-      this.resultContainer.appendChild(incorrectAnswer);
-      this.resultContainer.appendChild(correctAnswer);
+      incorrectContainer.appendChild(incorrectQuestion);
+      incorrectContainer.appendChild(incorrectAnswer);
+      incorrectContainer.appendChild(correctAnswer);
+      this.incorrectAnsContainer.appendChild(incorrectContainer);
+
     })
   };
 };
@@ -117,8 +126,7 @@ ResultView.prototype.renderChart = function (score) {
           enabled: true,
           format: '<b>{point.name}</b>: {point.percentage:.1f} %',
           style: {
-            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'brown',
-            backgroundColor: (Highcharts.theme && Highcharts.theme.contrastBackgroundColor) || 'red'
+            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || "black"
           }
         }
       }
@@ -128,12 +136,12 @@ ResultView.prototype.renderChart = function (score) {
       name: 'result',
       data: [{
         name: "correct",
-        color: "green",
+        color: "rgb(93, 173, 173)",
         y: score
 
       }, {
         name: 'Incorrect',
-        color: "red",
+        color: "rgb(240, 113, 120)",
         y: 10 - score
       }
     ]
