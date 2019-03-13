@@ -14,6 +14,7 @@ QuizView.prototype.bindEvent = function () {
 QuizView.prototype.render = function () {
   const quizCounterContainer = document.createElement('div');
   quizCounterContainer.id = 'quiz-counter';
+  
   this.container.appendChild(quizCounterContainer);
 };
 
