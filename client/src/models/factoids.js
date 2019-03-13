@@ -13,7 +13,7 @@ const Factoids = function() {
 
   'Landfills are composed of 35% packaging materials.',
 
-  ' Efforts to maintain and purify our drinking water can take a huge toll on carbon emissions.',
+  'Efforts to maintain and purify our drinking water can take a huge toll on carbon emissions.',
 
   'Unlike oxygen and nitrogen, carbon dioxide is actually a trace gas within our atmosphere – there are roughly 500 parts per million (0.05% of the Earth’s atmosphere is carbon dioxide).',
 
