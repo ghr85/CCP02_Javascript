@@ -12,9 +12,6 @@ QuizView.prototype.bindEvent = function () {
 };
 
 QuizView.prototype.render = function (questionNumber) {
-  // const quizCounterContainer = document.createElement('div');
-  // quizCounterContainer.id = 'quiz-counter';
-  // this.container.appendChild(quizCounterContainer);
   this.container.innerHTML = '';
   const quizCounterContainer = document.createElement('p');
   quizCounterContainer.textContent = `Question ${questionNumber.questionNumber} of 10`;
