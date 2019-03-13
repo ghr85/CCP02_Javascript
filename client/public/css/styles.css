@@ -76,3 +76,13 @@ color: rgb(25, 93, 28);
   color: white;
   font-size: 36px;
 }
+
+
+.questionViewContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.question-image{
+  width:350px;
+  height:350px;
+}
