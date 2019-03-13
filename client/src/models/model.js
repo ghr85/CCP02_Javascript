@@ -63,8 +63,8 @@ Model.prototype.bindEvent = function () {
           "question":object.question,
           "answer_count": object.incorrect_answers.push(object.correct_answer),
           "correct": object.correct_answer,
-          "answers": this.shuffle(object.incorrect_answers)
-          // "image": this.image_url
+          "answers": this.shuffle(object.incorrect_answers),
+          "image": object.image_url
         }
       });
     });
