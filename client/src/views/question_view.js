@@ -10,6 +10,7 @@ QuestionView.prototype.bindEvent = function () {
   PubSub.subscribe('Model:question-loaded', (evt) => {
     this.renderQuestion(evt.detail.question.question);
     this.renderAnswers(evt.detail.question.answers);
+    this.renderImage(evt.detail.question.image);
   });
 
 };
@@ -20,6 +21,14 @@ QuestionView.prototype.renderQuestion = function (question_str) {
   question.textContent = question_str
   question.classList.add('Question')
   this.container.appendChild(question)
+};
+
+QuestionView.prototype.renderImage = function (img_pg) {
+  const image = document.createElement('img');
+  image.classList.add('image-size');
+  image.src = img_pg;
+  this.container.appendChild(image);
+
 };
 
 QuestionView.prototype.renderAnswers = function (answer_ary) {
