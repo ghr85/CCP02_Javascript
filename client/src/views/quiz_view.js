@@ -11,10 +11,15 @@ QuizView.prototype.bindEvent = function () {
   console.log('QuizView Integrated');
 };
 
-QuizView.prototype.render = function () {
-  const quizCounterContainer = document.createElement('div');
-  quizCounterContainer.id = 'quiz-counter';
+QuizView.prototype.render = function (questionNumber) {
+  // const quizCounterContainer = document.createElement('div');
+  // quizCounterContainer.id = 'quiz-counter';
+  // this.container.appendChild(quizCounterContainer);
+  this.container.innerHTML = '';
+  const quizCounterContainer = document.createElement('p');
+  quizCounterContainer.textContent = `Question ${questionNumber.questionNumber} of 10`;
   this.container.appendChild(quizCounterContainer);
+
 };
 
 module.exports = QuizView;

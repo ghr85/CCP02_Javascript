@@ -5,7 +5,7 @@ db.questions.insertMany([
 {
   "qid": "1",
 "type": "multiple",
-"image_url": "../../public/images/images/tv01.jpg",
+"image_url": "../../public/images/tv01.jpg",
 "difficulty": "medium",
 "question": "Recycling One Aluminum Can Will Power a TV For How Long?",
 "correct_answer": "3 Hours",
