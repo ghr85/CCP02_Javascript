@@ -63,8 +63,9 @@ Model.prototype.bindEvent = function () {
           "question":object.question,
           "answer_count": object.incorrect_answers.push(object.correct_answer),
           "correct": object.correct_answer,
-          "answers": this.shuffle(object.incorrect_answers)
-        }
+          "answers": this.shuffle(object.incorrect_answers),
+          "image": object.image_url
+        };
       });
     });
   };
@@ -84,7 +85,9 @@ Model.prototype.bindEvent = function () {
     this.currentQuestion = this.allQuestionsArray[this.questionNumber];
     PubSub.publish("Model:question-loaded", {
       "questionNumber": this.questionNumber,
-      "question": this.currentQuestion
+      "question": this.currentQuestion,
+      // "image": this.image_url
+      // console.log("image");
     });
   };
 
