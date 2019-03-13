@@ -36,3 +36,37 @@ li{
 .highcharts-background{
   opacity:0.10;
 }
+
+#incorrectAnswers{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.incorrectContainer{
+  border-style:solid;
+  border-width:thin;
+  border-color: black;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.44);
+  margin: 2px;
+  padding: 3px;
+}
+
+
+.incorrectQ{
+color: black;
+}
+.incorrectA{
+color: rgb(223, 38, 38);
+}
+.correctA{
+color: rgb(25, 93, 28);
+}
+
+#home-btn{
+  width: 100%;
+  padding: 3px;
+  background-color: rgb(20, 148, 152);
+  color: white;
+  font-size: 36px;
+}

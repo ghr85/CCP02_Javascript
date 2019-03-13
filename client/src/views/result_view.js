@@ -3,6 +3,7 @@ const Highcharts = require('highcharts')
 const ResultView = function(container){
   this.container = container;
   this.resultContainer = null;
+  this.incorrectAnsContainer = null;
 };
 
 ResultView.prototype.bindEvent = function () {
@@ -23,6 +24,10 @@ ResultView.prototype.bindEvent = function () {
 
     const scoreComment = this.checkScore(evt.detail.score);
     this.resultContainer.appendChild(scoreComment);
+
+    this.incorrectAnsContainer = document.createElement('div')
+    this.incorrectAnsContainer.id = 'incorrectAnswers'
+    this.resultContainer.appendChild(this.incorrectAnsContainer);
 
     this.renderIncorrect(evt.detail.score,evt.detail.incorrectAnswers)
 
@@ -67,7 +72,7 @@ ResultView.prototype.checkScore = function (score) {
 ResultView.prototype.createRestartButton = function () {
   const button = document.createElement('button');
   button.id ='home-btn';
-  button.textContent = 'Return Home'
+  button.textContent = 'Return to the Homepage'
   button.value = 1;
 
   button.addEventListener('click', (evt) => {
@@ -81,6 +86,7 @@ ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
     const wrongUns = document.createElement('p');
     wrongUns.textContent = `Here are the questions you got wrong`
     this.resultContainer.appendChild(wrongUns);
+
     incorrectAnswerArray.forEach((element) => {
       const incorrectContainer = document.createElement('div')
       incorrectContainer.classList.add('incorrectContainer')
@@ -100,7 +106,7 @@ ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
       incorrectContainer.appendChild(incorrectQuestion);
       incorrectContainer.appendChild(incorrectAnswer);
       incorrectContainer.appendChild(correctAnswer);
-      this.resultContainer.appendChild(incorrectContainer);
+      this.incorrectAnsContainer.appendChild(incorrectContainer);
 
     })
   };
