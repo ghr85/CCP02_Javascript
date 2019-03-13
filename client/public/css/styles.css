@@ -1,7 +1,13 @@
 *{
 font-family: Helvetica;
 }
+header{
+  display:flex;
+}
 
+#leaf{
+  font-size: 24px;
+}
 .Answer{
   color: black;
   background-color: rgb(99, 185, 74);

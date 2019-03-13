@@ -46,13 +46,13 @@ ResultView.prototype.checkScore = function (score) {
   scoreText.classList.add('scoreComment')
   if (score > 0 && score <= 3)
   {
-    scoreText.textContent = `Get Yourself Back to School!`
+    scoreText.textContent = `Get Yourself Back to School! Here are the ones you got wrong:`
   } else if (score > 3 && score <= 6) {
-    scoreText.textContent = 'You Need to Brush Up!'
+    scoreText.textContent = 'You Need to Brush Up! Here is where you went wrong:'
   }
   else if (score > 6 && score <= 9)
   {
-    scoreText.textContent = 'A for Effort!'
+    scoreText.textContent = 'A for Effort! Only a few mistakes:'
   }
   else if (score == 10)
   {
@@ -60,7 +60,7 @@ ResultView.prototype.checkScore = function (score) {
   }
   else if (score === 0)
   {
-    scoreText.textContent = `You're a Planet Killer!`
+    scoreText.textContent = `You're a Planet Killer! Here are the correct answers:`
   }
 
 
@@ -83,9 +83,6 @@ ResultView.prototype.createRestartButton = function () {
 };
 ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
   if (score!== 10){
-    const wrongUns = document.createElement('p');
-    wrongUns.textContent = `Here are the questions you got wrong`
-    this.resultContainer.appendChild(wrongUns);
 
     incorrectAnswerArray.forEach((element) => {
       const incorrectContainer = document.createElement('div')
