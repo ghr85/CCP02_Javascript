@@ -9,32 +9,31 @@ ResultView.prototype.bindEvent = function () {
   console.log('ResultView Integrated');
   PubSub.subscribe('Model:FinalScore', (evt) => {
     this.container.innerHTML = '';
-
     this.resultContainer = document.createElement('div');
     this.resultContainer.id = 'result_container';
 
-    const heading = document.createElement('h3');
-    heading.textContent = 'Result...'
+    const heading = document.createElement('h1');
+    heading.textContent = 'And the Results are in....'
     this.resultContainer.appendChild(heading);
 
     this.renderChart(evt.detail.score);
-  const result = document.createElement('p');
-  result.textContent = `You got ${evt.detail.score} out of 10!`
-  this.resultContainer.appendChild(result);
+    const result = document.createElement('p');
+    result.textContent = `You got ${evt.detail.score} out of 10!`
+    this.resultContainer.appendChild(result);
 
-  const scoreComment = this.checkScore(evt.detail.score);
-  this.resultContainer.appendChild(scoreComment);
+    const scoreComment = this.checkScore(evt.detail.score);
+    this.resultContainer.appendChild(scoreComment);
 
-  this.renderIncorrect(evt.detail.score,evt.detail.incorrectAnswers)
-
-
-  const restartButton = this.createRestartButton();
-  this.resultContainer.appendChild(restartButton);
+    this.renderIncorrect(evt.detail.score,evt.detail.incorrectAnswers)
 
 
-  this.container.appendChild(this.resultContainer);
+    const restartButton = this.createRestartButton();
+    this.resultContainer.appendChild(restartButton);
 
-});
+
+    this.container.appendChild(this.resultContainer);
+
+  });
 };
 
 ResultView.prototype.checkScore = function (score) {
