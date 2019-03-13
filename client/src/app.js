@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewContainer = document.querySelector('#content_parent');
   const landingView = new LandingView(viewContainer);
   const model = new Model('http://localhost:3000/api/questions');
-  const quizView = new QuizView(viewContainer);
+  const infoDivA = document.querySelector('#question-number')
+  const quizView = new QuizView(infoDivA);
   const questionView = new QuestionView(viewContainer);
   const resultView = new ResultView(viewContainer);
 
