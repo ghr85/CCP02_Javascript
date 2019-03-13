@@ -82,8 +82,9 @@ ResultView.prototype.createRestartButton = function () {
   return button;
 };
 ResultView.prototype.renderIncorrect = function (score,incorrectAnswerArray) {
-  if (score!== 10){
 
+  if (score!== 10){
+    this.incorrectAnsContainer.innerHTML ='';
     incorrectAnswerArray.forEach((element) => {
       const incorrectContainer = document.createElement('div')
       incorrectContainer.classList.add('incorrectContainer')

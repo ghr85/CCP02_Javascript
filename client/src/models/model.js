@@ -91,6 +91,7 @@ Model.prototype.bindEvent = function () {
   Model.prototype.reset = function () {
     this.questionNumber = 0;
     this.userScore = 0;
+    this.inCorrectQuestionArray = [];
     this.getQuestionData();
     PubSub.publish('Model:Factoid-loaded', this.get_landing_quote())
   };

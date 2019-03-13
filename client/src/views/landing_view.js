@@ -12,9 +12,6 @@ console.log('LandingView Integrated');
 };
 
 
-
-
-
 LandingView.prototype.render = function (factoidString) {
   this.container.innerHTML = '';
 
