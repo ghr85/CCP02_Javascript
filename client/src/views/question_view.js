@@ -25,7 +25,7 @@ QuestionView.prototype.renderQuestion = function (question_str) {
 
 QuestionView.prototype.renderImage = function (img_pg) {
   const image = document.createElement('img');
-  image.classList.add('image-size');
+  image.classList.add('question-image');
   image.src = img_pg;
   this.container.appendChild(image);
 
