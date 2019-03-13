@@ -14,11 +14,7 @@ const Factoids = function() {
 
     'Droughts, hurricanes, wildfires, extinction on endangered species, melting of polar ice caps and storms are a few of the effects of global warming',
 
-<<<<<<< HEAD
-  'Efforts to maintain and purify our drinking water can take a huge toll on carbon emissions.',
-=======
     'Global warming is causing the colder areas of the world to become more hot, thereby becoming more vulnerable to diseases.',
->>>>>>> feature/newquestions
 
     'Failure in preventing global warming can cause a major economic collapse causing 20% of global domestic output to fix.',
 
