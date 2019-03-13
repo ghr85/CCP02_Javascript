@@ -1,6 +1,7 @@
 use quiz;
 db.dropDatabase();
 
+
 db.questions.insertMany([
 {
   "qid": "1",
