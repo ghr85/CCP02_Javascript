@@ -17,3 +17,13 @@
 li{
   list-style: none
 }
+
+#doc_container{
+  min-height: 40rem;
+  background-image: url("../images/background.png");
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
