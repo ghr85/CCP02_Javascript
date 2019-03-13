@@ -128,12 +128,12 @@ ResultView.prototype.renderChart = function (score) {
       name: 'result',
       data: [{
         name: "correct",
-        color: "green",
+        color: "rgb(93, 173, 173)",
         y: score
 
       }, {
         name: 'Incorrect',
-        color: "red",
+        color: "rgb(240, 113, 120)",
         y: 10 - score
       }
     ]

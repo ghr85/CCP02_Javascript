@@ -1,5 +1,5 @@
 *{
-  background-color: whitesmoke;
+font-family: Helvetica;
 }
 
 .Answer{
@@ -26,4 +26,13 @@ li{
   background-position: center;
   background-size: cover;
 
+}
+
+#logo-img{
+  width: 50px;
+  height: auto;
+
+}
+.highcharts-background{
+  opacity:0.10;
 }
