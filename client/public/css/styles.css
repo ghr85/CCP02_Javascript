@@ -3,9 +3,14 @@ font-family: Helvetica;
 }
 header{
   display:flex;
+  text-align:center;
+}
+body{
+  background-color: black;
 }
 
 #leaf{
+  text-align: center;
   font-size: 24px;
 }
 .Answer{
@@ -43,6 +48,7 @@ li{
 #logo-img{
   width: 50px;
   height: auto;
+  margin: 10px;
 
 }
 .highcharts-background{
@@ -57,7 +63,7 @@ li{
 .incorrectContainer{
   border-style:solid;
   border-width:thin;
-  border-color: black;
+  border-color: orange;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.44);
   margin: 2px;
@@ -69,10 +75,10 @@ li{
 color: black;
 }
 .incorrectA{
-color: rgb(223, 38, 38);
+color: rgb(240, 113, 120);
 }
 .correctA{
-color: rgb(25, 93, 28);
+color: black;
 }
 
 #home-btn{
