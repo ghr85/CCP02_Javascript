@@ -85,9 +85,7 @@ Model.prototype.bindEvent = function () {
     this.currentQuestion = this.allQuestionsArray[this.questionNumber];
     PubSub.publish("Model:question-loaded", {
       "questionNumber": this.questionNumber,
-      "question": this.currentQuestion,
-      // "image": this.image_url
-      // console.log("image");
+      "question": this.currentQuestion
     });
   };
 

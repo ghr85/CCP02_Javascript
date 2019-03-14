@@ -1,11 +1,12 @@
 use quiz;
 db.dropDatabase();
 
+
 db.questions.insertMany([
 {
-  "qid": "1",
+ "qid": "1",
 "type": "multiple",
-"image_url": "./images/images/tv01.jpg",
+"image_url": "./images/tv01.jpg",
 "difficulty": "medium",
 "question": "Recycling One Aluminum Can Will Power a TV For How Long?",
 "correct_answer": "3 Hours",
@@ -16,7 +17,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "2",
+   "qid": "2",
 "type": "multiple",
 "image_url": "./images/rainforrest01.jpg",
 "difficulty": "medium",
@@ -29,7 +30,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "3",
+   "qid": "3",
 "type": "multiple",
 "image_url": "./images/earth01.jpeg",
 "difficulty": "medium",
@@ -42,7 +43,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "4",
+   "qid": "4",
 "type": "multiple",
 "image_url": "./images/deforrestation01.jpg",
 "difficulty": "medium",
@@ -55,7 +56,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "5",
+   "qid": "5",
 "type": "multiple",
 "image_url": "./images/glassbottle01.jpeg",
 "difficulty": "medium",
@@ -68,7 +69,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "6",
+   "qid": "6",
 "type": "multiple",
 "image_url": "./images/landfill01.jpeg",
 "difficulty": "medium",
@@ -81,7 +82,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "7",
+   "qid": "7",
 "type": "boolean",
 "image_url": "./images/goldentoad01.jpeg",
 "difficulty": "medium",
@@ -92,7 +93,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "8",
+   "qid": "8",
 "type": "multiple",
 "image_url": "./images/comic02.jpg",
 "difficulty": "medium",
@@ -105,7 +106,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "9",
+   "qid": "9",
 "type": "boolean",
 "image_url": "./images/riverpollution01.jpg",
 "difficulty": "medium",
@@ -116,7 +117,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "10",
+   "qid": "10",
 "type": "multiple",
 "image_url": "./images/comic01.png",
 "difficulty": "medium",
@@ -129,7 +130,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "11",
+   "qid": "11",
 "type": "multiple",
 "image_url": "./images/comic04.jpg",
 "difficulty": "medium",
@@ -142,7 +143,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "12",
+   "qid": "12",
 "type": "multiple",
 "image_url": "./images/seapollution01.jpg",
 "difficulty": "medium",
@@ -155,7 +156,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "13",
+   "qid": "13",
 "type": "multiple",
 "image_url": "./images/icecaps01.jpg",
 "difficulty": "medium",
@@ -168,7 +169,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "14",
+   "qid": "14",
 "type": "multiple",
 "image_url": "./images/trump01.jpeg",
 "difficulty": "medium",
@@ -181,7 +182,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "15",
+   "qid": "15",
 "type": "multiple",
 "image_url": "./images/solarsystem01.jpeg",
 "difficulty": "medium",
@@ -194,7 +195,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "16",
+   "qid": "16",
 "type": "multiple",
 "image_url": "./images/emissions01.png",
 "difficulty": "medium",
@@ -207,7 +208,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "17",
+   "qid": "17",
 "type": "multiple",
 "image_url": "./images/planettemp01.jpg",
 "difficulty": "medium",
@@ -220,7 +221,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "18",
+   "qid": "18",
 "type": "multiple",
 "image_url": "./images/carboncapture01.png",
 "difficulty": "medium",
@@ -233,7 +234,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "19",
+   "qid": "19",
 "type": "multiple",
 "image_url": "./images/chemical01.jpg",
 "difficulty": "medium",
@@ -246,7 +247,7 @@ db.questions.insertMany([
 ]
 },
 {
-    "qid": "20",
+   "qid": "20",
 "type": "multiple",
 "image_url": "./images/toxicair02.jpg",
 "difficulty": "medium",

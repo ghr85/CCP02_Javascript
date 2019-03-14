@@ -2,7 +2,8 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const QuestionView = function(container){
   this.container = container;
-
+  this.questionViewContainer = null;
+  this.questionContainer = null;
 };
 
 QuestionView.prototype.bindEvent = function () {
@@ -17,17 +18,32 @@ QuestionView.prototype.bindEvent = function () {
 
 QuestionView.prototype.renderQuestion = function (question_str) {
   this.container.innerHTML = '';
+
+  this.questionViewContainer = document.createElement('div');
+  this.questionViewContainer.classList.add('questionViewContainer');
+  this.container.appendChild(this.questionViewContainer);
+
+
+  this.questionContainer = document.createElement('div');
+  this.questionContainer.classList.add('questionContainer');
+  this.questionViewContainer.appendChild(this.questionContainer)
+
   const question = document.createElement('h3')
   question.textContent = question_str
   question.classList.add('Question')
-  this.container.appendChild(question)
+  this.questionContainer.appendChild(question)
 };
 
 QuestionView.prototype.renderImage = function (img_pg) {
+
+  const image_container = document.createElement('div');
+  image_container.classList.add('image_container')
+  this.questionViewContainer.appendChild(image_container);
+
   const image = document.createElement('img');
-  image.classList.add('image-size');
+  image.classList.add('question-image');
   image.src = img_pg;
-  this.container.appendChild(image);
+  image_container.appendChild(image);
 
 };
 
@@ -38,15 +54,12 @@ QuestionView.prototype.renderAnswers = function (answer_ary) {
     answerItem.textContent = answer;
     answerItem.id = answer;
     answerItem.classList.add('Answer');
-    this.container.appendChild(answerItem)
+    this.questionContainer.appendChild(answerItem)
     answerItem.addEventListener('click', (evt) => {
       PubSub.publish('QuestionView:answerselected',answerItem.id)
     })
   })
 };
-
-
-
 
 
 module.exports = QuestionView;

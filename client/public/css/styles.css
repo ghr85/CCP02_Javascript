@@ -3,21 +3,32 @@ font-family: Helvetica;
 }
 header{
   display:flex;
+  text-align:center;
+}
+body{
+  background-color: black;
 }
 
 #leaf{
+  text-align: center;
   font-size: 24px;
 }
 .Answer{
   color: black;
-  background-color: rgb(99, 185, 74);
+  background-color: rgb(80, 191, 191);
   margin: 2px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
 }
 
 .Answer:hover{
   cursor:pointer;
   color: black;
-  background-color: rgb(178, 184, 73);
+  background-color: rgb(231, 127, 52);
+  transition: 0.75s;
+
 }
 
 li{
@@ -39,6 +50,7 @@ li{
 #logo-img{
   width: 50px;
   height: auto;
+  margin: 10px;
 
 }
 .highcharts-background{
@@ -53,7 +65,7 @@ li{
 .incorrectContainer{
   border-style:solid;
   border-width:thin;
-  border-color: black;
+  border-color: orange;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.44);
   margin: 2px;
@@ -103,7 +115,6 @@ h2{
   color: white;
   font-size: 36px;
 }
-
 .start-btn{
   width: 100%;
   padding: 3px;
@@ -113,5 +124,27 @@ h2{
 }
 
 
+.questionViewContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.question-image{
+  width:350px;
+  height:350px;
+  border-style: solid;
+  border-color: orange;
+  padding: 10px;
+}
 
+.questionContainer{
+text-align:center;
+ padding: 5px;
+}
+
+.image_container{
+  text-align-last: center;
+
+}
+#result_container{
+  text-align:center;
 }
