@@ -31,6 +31,8 @@ li{
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  width: 100vw;
+ height: 100vh;
 
 }
 
@@ -63,16 +65,50 @@ li{
 color: black;
 }
 .incorrectA{
-color: rgb(223, 38, 38);
+color: rgb(240, 113, 120);
 }
 .correctA{
-color: rgb(25, 93, 28);
+  font-weight: bold;
+color: rgb(93, 173, 173);
 }
 
+#landing{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 6fr 1fr;
+}
+
+#gif{
+  grid: 2;
+}
+
+.landing-gif{
+  width: 100%;
+  height: 200%;
+}
+
+h2{
+  grid: 1;
+}
 #home-btn{
   width: 100%;
   padding: 3px;
   background-color: rgb(20, 148, 152);
   color: white;
   font-size: 36px;
+}
+
+.start-btn{
+
+  width: 100%;
+  padding: 3px;
+  background-color: rgb(20, 148, 152);
+  color: white;
+  font-size: 36px;
+  grid-area: 2/1/3/3;
+
+}
+
+
+
 }

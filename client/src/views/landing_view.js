@@ -2,6 +2,7 @@ const PubSub = require('../helpers/pub_sub.js');
 
 const LandingView = function(container){
   this.container = container;
+
 };
 
 LandingView.prototype.bindEvent = function () {
@@ -21,10 +22,19 @@ LandingView.prototype.render = function (factoidString) {
   const factoid = this.createHeading(factoidString)
   landingContainer.appendChild(factoid);
 
+  const gifContainer = document.createElement('div')
+  gifContainer.id = 'gif'
+
+  this.renderGif(gifContainer);
+
+
   const startButton = this.createStartButton();
-  landingContainer.appendChild(startButton);
+
 
   this.container.appendChild(landingContainer);
+
+  landingContainer.appendChild(gifContainer);
+  this.container.appendChild(startButton);
 
 };
 
@@ -32,6 +42,13 @@ LandingView.prototype.createHeading = function (textContent) {
   const heading = document.createElement('h2');
   heading.textContent = textContent;
   return heading;
+};
+
+LandingView.prototype.renderGif = function (gifContainer) {
+  const gif = document.createElement('img');
+  gif.classList.add('landing-gif');
+  gif.src = './images/cycle01.gif'
+  gifContainer.appendChild(gif)
 };
 
 LandingView.prototype.createStartButton = function () {
