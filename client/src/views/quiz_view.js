@@ -5,10 +5,14 @@ const QuizView = function (container) {
 };
 
 QuizView.prototype.bindEvent = function () {
+  console.log('QuizView Integrated');
+
   PubSub.subscribe('Model:question-loaded', (evt) => {
     this.render(evt.detail);
   });
-  console.log('QuizView Integrated');
+  PubSub.subscribe('Model:FinalScore', (evt) => {
+    this.container.innerHTML = '';
+  });
 };
 
 
