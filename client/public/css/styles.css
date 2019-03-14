@@ -10,14 +10,20 @@ header{
 }
 .Answer{
   color: black;
-  background-color: rgb(99, 185, 74);
+  background-color: rgb(80, 191, 191);
   margin: 2px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+
 }
 
 .Answer:hover{
   cursor:pointer;
   color: black;
-  background-color: rgb(178, 184, 73);
+  background-color: rgb(231, 127, 52);
+  transition: 0.75s;
+
 }
 
 li{
@@ -85,4 +91,20 @@ color: rgb(25, 93, 28);
 .question-image{
   width:350px;
   height:350px;
+  border-style: solid;
+  border-color: orange;
+  padding: 10px;
+}
+
+.questionContainer{
+text-align:center;
+ padding: 5px;
+}
+
+.image_container{
+  text-align-last: center;
+
+}
+#result_container{
+  text-align:center;
 }
