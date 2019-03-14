@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const infoDivA = document.querySelector('#question-number')
   const quizView = new QuizView(infoDivA);
   const questionView = new QuestionView(viewContainer);
-  const resultView = new ResultView(viewContainer);
+  const resultView = new ResultView(infoDivA);
 
   landingView.bindEvent();
   model.bindEvent();
